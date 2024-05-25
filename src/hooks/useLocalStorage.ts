@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 
-const useLocalStorage = () => {
-  return (
-    <div>
+const useLocalStorage = (keyname, keyvalue) => {
+  const [message, setMessage] = useState(localStorage.getItem(keyname) || "");
 
-    </div>
-  )
-}
+  useEffect(() => {
+    setMessage((prev) => {
+      localStorage.setItem(keyname, keyvalue);
+      return prev;
+    });
+  }, [message]);
 
-export default useLocalStorage
+  return [message, setMessage, remove];
+};
+
+export default useLocalStorage;
