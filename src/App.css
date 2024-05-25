@@ -1,0 +1,201 @@
+html,
+body,
+#root,
+.app,
+.questions {
+  width: 100%;
+  height: 100%;
+}
+#root {
+  overflow: auto;
+  background-color: #f8fafc;
+}
+*,
+:after,
+:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.todo-list {
+  width: 480px;
+  margin: 128px auto 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  padding: 32px;
+  background-color: #fff;
+  &:hover {
+    transition: 0.7s;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  }
+  .control {
+    display: flex;
+    .btn {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      background-color: rgb(6, 182, 212);
+      &:hover {
+        background-color: rgb(14, 116, 144);
+      }
+    }
+    .input {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+  .title {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .todo-items {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    .item {
+      position: relative;
+      .item-info {
+        margin-left: 10px;
+
+      }
+      .finished {
+        text-decoration: line-through;
+
+      }
+      .item-delete-btn {
+        position: absolute;
+        right: 0;
+        background-color: black;
+        color: white;
+        &:hover {
+          background-color: rgb(14, 116, 144);
+        }
+      }
+    }
+  }
+}
+
+.container {
+  width: 90vw;
+  margin: 80px auto;
+}
+@media screen and (min-width: 768px) {
+  .tours {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+@media screen and (min-width: 992px) {
+  .tours {
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
+  }
+}
+.tours {
+  display: grid;
+  gap: 2rem;
+  margin-top: 32px;
+}
+.title {
+  text-align: center;
+}
+.tour {
+  position: relative;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+.image {
+  width: 100%;
+  height: 320px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  /* display: block; */
+  /* object-fit: cover; */
+}
+.tour-price-span {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #10b981;
+  color: white;
+}
+.tour-info {
+  padding: 10px;
+  text-align: center;
+  .button {
+    width: 80%;
+  }
+  .show-btn {
+    color: #10b981;
+  }
+}
+.button {
+  border: 1px solid #10b981;
+  color: #10b981;
+  &:hover {
+    background-color: #10b981;
+    color: white;
+  }
+}
+
+.tour-info-p {
+  overflow: hidden;
+  padding: 0 20px;
+  text-align: left;
+}
+.no-tours-page {
+  width: 90vw;
+  margin: 80px auto;
+  text-align: center;
+  .button {
+    margin-top: 32px;
+  }
+}
+.loding {
+  margin: 200px auto;
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* #root {
+  background-color: #CFFAFE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+.questions {
+  display: flex;
+  background-color: #fff;
+  flex-flow: nowrap column;
+  align-items: center;
+  row-gap: 30px;
+  width: 90vw;
+  max-width: 720px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  padding: 40px;
+}
+.question-option {
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 5px gray;
+  margin: 0 50px;
+  padding: 10px 0;
+  width: 100%;
+}
+.question-option-head {
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.question-info {
+  padding: 0 30px;
+} */

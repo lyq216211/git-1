@@ -1,0 +1,59 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#root {
+  background-color: rgb(241, 222, 208);
+}
+.die-container {
+  width: 600px;
+  height: 600px;
+  margin: 200px auto 0;
+  background-color: rgb(10, 36, 51);
+  overflow: hidden;
+  .die {
+    width: 500px;
+    height: 500px;
+    margin-top: 50px;
+    margin-left: 50px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 10px;
+    text-align: center;
+    padding: 30px;
+    .dices {
+      width: 400px;
+      height: 250px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      row-gap: 30px;
+      column-gap: 20px;
+      align-items: center;
+
+      .dice {
+        font-size: larger;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+          rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 65px;
+        &.locked {
+          background-color: rgb(89, 227, 144);
+        }
+      }
+    }
+    .roll-button {
+      width: 150px;
+      height: 80px;
+      background-color: rgb(80, 53, 253);
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
+}
