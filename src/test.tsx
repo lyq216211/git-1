@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
-const test = () => {
+const Test = () => {
+  const [state, setState] = useState();
   return <div></div>;
 };
 
-export default test;
+export default Test;
