@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const useLocalStorage = (keyname, initialValue) => {
+  console.log("aaa");
   const [localStroageMessage, setLocalStroageMessage] = useState(
     localStorage.getItem(keyname) || initialValue
   );
