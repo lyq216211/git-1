@@ -17,10 +17,9 @@ function App() {
 
   return (
     <>
-      {/* <TodoList></TodoList>
-      <Tours></Tours> */}
-      <Die></Die>
-
+      <TodoList></TodoList>
+      <Tours></Tours>
+      {/* <Die></Die> */}
     </>
   );
 

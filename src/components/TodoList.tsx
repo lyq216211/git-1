@@ -2,11 +2,12 @@ import React, { useEffect, useState, useRef } from "react";
 import { Input, Button, message, InputRef } from "antd";
 import TodoListItem from "./TodoListItem";
 import { nanoid } from "nanoid";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const TodoList = () => {
-  const [items, setItems] = useState(
-    JSON.parse(localStorage.getItem("TodoList")) || []
-  );
+  const [localStroageMessage, setLocalStroageMessage, removeItem] =
+    useLocalStorage("TodoList", JSON.stringify(""));
+  const [items, setItems] = useState(JSON.parse(localStroageMessage) || []);
   const [value, setValue] = useState("");
   const [messageApi, contextHolder] = message.useMessage();
   const inputRef = useRef<InputRef>(null);
@@ -21,7 +22,7 @@ const TodoList = () => {
         content: "Item Added To The List",
         duration: 3,
       });
-      setValue('')
+      setValue("");
     } else {
       messageApi.open({
         type: "error",
@@ -42,11 +43,15 @@ const TodoList = () => {
     });
   }
   useEffect(() => {
-    localStorage.setItem("TodoList", JSON.stringify(items));
+    setLocalStroageMessage(JSON.stringify(items));
   }, [items]);
   useEffect(() => {
-    if (inputRef.current) { inputRef.current.focus(); }
-  }, [])
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
+  console.log("local   ", localStroageMessage);
+
   return (
     <div className="todo-list">
       {contextHolder}

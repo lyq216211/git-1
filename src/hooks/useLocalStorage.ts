@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from "react";
 
-const useLocalStorage = (keyname, keyvalue) => {
-  const [message, setMessage] = useState(localStorage.getItem(keyname) || "");
-
+const useLocalStorage = (keyname, initialValue) => {
+  const [localStroageMessage, setLocalStroageMessage] = useState(
+    localStorage.getItem(keyname) || initialValue
+  );
+  const removeItem = () => {
+    localStorage.removeItem(keyname);
+  };
   useEffect(() => {
-    setMessage((prev) => {
-      localStorage.setItem(keyname, keyvalue);
-      return prev;
-    });
-  }, [message]);
+    localStorage.setItem(keyname, localStroageMessage);
+  }, [localStroageMessage]);
 
-  return [message, setMessage, remove];
+  // useEffect(() => {
+  //   localStorage.setItem(keyname, initialValue);
+  // }, []);
+
+  return [localStroageMessage, setLocalStroageMessage, removeItem];
 };
 
 export default useLocalStorage;
