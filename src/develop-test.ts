@@ -9,3 +9,4 @@ export default defineConfig({
 });
 
 const a = 5641213;
+const b = "b";
